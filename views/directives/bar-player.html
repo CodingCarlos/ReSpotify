@@ -1,0 +1,17 @@
+<ons-gesture-detector> 
+	<div class="player-bg-cover" style="background-image: url({{current.cover}}) !important;"></div>
+	<div class="player-container color-white bar-player">
+		<ons-row style="position: relative;">
+			<ons-col width="50px" class="toolbar__left">
+				<ons-icon icon="fa-stop" size="32px" style="padding-left: 16px;"></ons-icon>
+			</ons-col>
+			<ons-col class="toolbar__center">
+				<!-- <strong>Cocaine makes me feel I'm on this song</strong> - System of a Down -->
+				<strong>{{current.title}}</strong> - {{current.author}}
+			</ons-col>
+			<ons-col width="50px" class="toolbar__right">
+				<ons-icon icon="md-play" size="32px" style="padding-right: 16px;"></ons-icon>
+			</ons-col>
+		</ons-row>
+	</div>
+</ons-gesture-detector>

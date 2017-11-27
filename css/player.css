@@ -1,0 +1,70 @@
+#player-page .page--material__background {
+	background-color: #f939f3;
+}
+
+.player-bg-cover {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-position: center;
+	height: 100%;
+	width: 100%;
+
+	-webkit-filter: blur(24px);
+	-moz-filter: blur(24px);
+	-o-filter: blur(24px);
+	-ms-filter: blur(24px);
+	filter: blur(24px);
+}
+.player-container {
+	background: linear-gradient(to top, #212121, transparent);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+#player-page .toolbar__left,
+#player-page .toolbar__right {
+	padding: 8px 24px 12px
+}
+
+.cover-slider { 
+	text-align:  center;
+}
+
+	.player-cover {
+		/*background: red;*/
+		border-radius: 5px;
+		display: inline-block;
+		height: 75vw;
+		width: 75vw;
+	}
+
+	.player-cover img {
+		max-height: 100%;
+		max-width: 100%;
+	}
+
+.player-title {
+	padding: 24px 12vw 12px;
+}
+
+	.player-title-name {
+		font-size: 18px;
+	}
+
+	.player-title-button {
+		text-align: center !important;
+	}
+
+.player-slide,
+.player-controls {
+	padding: 8px 3vw;
+}
+
+	.duration_info {
+		text-align: center !important;
+	}

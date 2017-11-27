@@ -1,0 +1,39 @@
+body,
+.page,
+.page--material__background {
+	background-color: #131414;
+	color: #ffffff;
+}
+
+.tabbar--material {
+	background-color: #212121;
+	color: #ffffff;
+}
+
+	:checked + .tabbar--material__button {
+		color: #ffffff;
+	}
+
+	.tabbar--material__button {
+		color: #5f5f5f;
+	}
+
+	.tabbar--material__border {
+		background-color: #ffffff;
+	}
+
+.inked {
+	color: #1ed760; /* #129543 */
+}
+.ink-button {
+	display: inline-block;
+	color: #1ed760;
+	font-size: .8em;
+	font-weight: 600;
+	text-align: right;
+	text-transform: uppercase;
+}
+
+.color-white {
+	color: white;
+}

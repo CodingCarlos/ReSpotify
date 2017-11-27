@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+
+	<meta name="viewport" content="width=device-width">
+
+	<title>ReSpotify</title>
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<link rel="manifest" href="manifest.json">
+	<link rel="icon" href="img/icon.png">
+	<link rel="apple-touch-icon" href="niceicon.png">
+
+	<!-- onsen -->
+  	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css"/>
+	<link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.css"/>
+	
+	<!-- own styles -->
+	<link rel="stylesheet" href="css/style.css"/>
+	<link rel="stylesheet" href="css/toolbar.css"/>
+	<link rel="stylesheet" href="css/list.css"/>
+	<link rel="stylesheet" href="css/player.css"/>
+
+	<!-- onsen -->
+	<script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+	<!-- angular -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.6/angular.min.js"></script>
+	<!-- onsen angular -->
+	<script src="https://unpkg.com/onsenui/js/angular-onsenui.min.js"></script>
+	<!-- ui-router -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.3/angular-ui-router.min.js"></script>
+
+</head>
+<body>
+
+	<ons-navigator animation="lift" var="mainPage">
+
+<!-- 	<ons-page>
+		<ons-tabbar var="myTabbar" swipeable position="auto">
+			<ons-tab page="views/home.html" label="Home" icon="ion-ios-home-outline" active-icon="md-home" ui-sref="navigator.home">
+			</ons-tab>
+			<ons-tab page="views/friends.html" label="Friends" icon="md-accounts-outline" active-icon="md-accounts"  ui-sref="navigator.friends">
+			</ons-tab>
+			<ons-tab page="views/explore.html" label="Explore" icon="ion-compass" active-icon="ion-android-compass" badge="7">
+			</ons-tab>
+			<ons-tab page="views/radio.html" label="Radio" icon="md-radio" active-icon="md-radio">
+			</ons-tab>
+			<ons-tab page="views/profile.html" label="Profile" icon="md-face" active-icon="md-face">
+			</ons-tab>
+		</ons-tabbar>
+
+		<ons-bottom-toolbar bar-player>
+		</ons-bottom-toolbar>
+	</ons-page> -->
+
+	</ons-navigator>
+
+
+	<script>
+	  document.addEventListener('dragstart', shallDrag, true);
+
+	  function shallDrag(event) {
+	  	if(event.target.matches('.list-covers') || event.target.matches('.list-covers-content') || event.target.matches('.list-covers-cover')) {
+			event.stopPropagation();
+			console.log('Stop tabs scroll');
+	  		return true;
+	  	} else {
+	  		return false;
+	  	}
+	  }
+	</script>
+
+
+	<!-- App -->
+	<script type="text/javascript" src="js/app.js"></script>
+
+	<!-- Services -->
+	<script type="text/javascript" src="services/player.js"></script>
+
+	<!-- Filters -->
+	<!-- Directives -->
+	<script type="text/javascript" src="directives/bar-player.js"></script>
+	<script type="text/javascript" src="directives/list-title.js"></script>
+	<script type="text/javascript" src="directives/list-covers.js"></script>
+
+	<!-- Controllers -->
+	<script type="text/javascript" src="controllers/page.js"></script>
+	<script type="text/javascript" src="controllers/player.js"></script>
+
+
+</body>
+</html>

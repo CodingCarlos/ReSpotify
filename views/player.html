@@ -1,0 +1,79 @@
+<ons-page id="player-page" ng-controller="PlayerController as Player">
+
+	<div class="player-bg-cover" style="background-image: url({{Player.current.cover}}) !important;"></div>
+	<div class="player-container">
+		<ons-row>
+			<ons-col class="toolbar__left" onClick="window.history.back();">
+				<ons-icon icon="md-chevron-down" size="32px"></ons-icon>
+			</ons-col>
+
+			<ons-col class="toolbar__right">
+				<ons-icon icon="md-more-vert" size="32px"></ons-icon>
+			</ons-col>
+		</ons-row>
+
+		<div class="cover-slider">
+			<div class="player-cover">
+				<img ng-src="{{Player.current.cover}}">
+			</div>
+		</div>
+
+
+		<ons-row class="player-title">
+			<ons-col width="40px" class="player-title-button" vertical-align="center">
+				<ons-icon size="24px" icon="md-plus"></ons-icon>
+			</ons-col>
+
+			<ons-col class="player-title-name toolbar-two_lines toolbar-center">
+				<div>
+					<strong>{{Player.current.title}}</strong>
+				</div>
+				<div>
+					<span>{{Player.current.author}}</span>
+				</div>
+			</ons-col>
+
+			<ons-col width="40px" class="player-title-button" vertical-align="center">
+				<ons-icon size="24px" icon="md-menu"></ons-icon>
+			</ons-col>
+		</ons-row>
+
+		<ons-row class="player-slide">
+			<ons-col width="54px" class="duration_info" vertical-align="center">
+				<!-- 0:45 -->
+				{{Player.current.timeAvg * Player.current.duration / 100}}
+			</ons-col>
+			
+			<ons-col style="padding-top: 7px;" vertical-align="center">
+				<!-- <ons-progress-bar value="17" secondary-value="100" modifier="material"></ons-progress-bar> -->
+				<ons-range style="width: 100%;" ng-model="Player.current.timeAvg"></ons-range>
+			</ons-col>
+
+			<ons-col width="54px" class="duration_info" vertical-align="center">
+				{{Player.current.duration}}
+			</ons-col>
+		</ons-row>
+
+		<ons-row class="player-controls">
+			<ons-col width="20%" class="duration_info" vertical-align="center">
+				<ons-icon icon="md-shuffle" size="24px"></ons-icon>
+			</ons-col>
+
+			<ons-col width="20%" class="duration_info" vertical-align="center">
+				<ons-icon icon="md-skip-previous" size="48px"></ons-icon>
+			</ons-col>
+			
+			<ons-col class="duration_info" vertical-align="center">
+				<ons-icon icon="md-play" size="96px"></ons-icon>
+			</ons-col>
+
+			<ons-col width="20%" class="duration_info" vertical-align="center">
+				<ons-icon icon="md-skip-next" size="48px"></ons-icon>
+			</ons-col>
+
+			<ons-col width="20%" class="duration_info" vertical-align="center">
+				<ons-icon icon="md-refresh" size="24px"></ons-icon>
+			</ons-col>
+		</ons-row>
+	</div>
+</ons-page>

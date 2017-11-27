@@ -1,0 +1,22 @@
+{
+  "name": "respotify",
+  "version": "0.0.1",
+  "description": "A new view over spotify app",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingCarlos/ReSpotify.git"
+  },
+  "author": "@CodingCarlos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CodingCarlos/ReSpotify/issues"
+  },
+  "homepage": "https://github.com/CodingCarlos/ReSpotify#readme",
+  "dependencies": {
+    "angular-spotify": "^1.5.1"
+  }
+}

@@ -1,0 +1,17 @@
+	<ons-page ng-controller="PageController as page">
+		<ons-tabbar var="myTabbar" swipeable position="auto" ons-postchange="page.onChange(myTabbar)">
+			<ons-tab page="views/home.html" icon="ion-ios-home-outline" active-icon="md-home" ui-sref="home">
+			</ons-tab>
+			<ons-tab page="views/friends.html" icon="md-accounts-outline" active-icon="md-accounts"  ui-sref="friends">
+			</ons-tab>
+			<ons-tab page="views/explore.html" icon="ion-compass" active-icon="ion-android-compass" badge="7">
+			</ons-tab>
+			<ons-tab page="views/radio.html" icon="md-radio" active-icon="md-radio">
+			</ons-tab>
+			<ons-tab page="views/profile.html" icon="md-face" active-icon="md-face">
+			</ons-tab>
+		</ons-tabbar>
+
+		<ons-bottom-toolbar bar-player ui-sref="player">
+		</ons-bottom-toolbar>
+	</ons-page>

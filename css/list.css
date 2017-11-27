@@ -1,0 +1,40 @@
+.horizontal-list {
+	padding: 12px 0;
+}
+
+.horizontal-list-title {
+	margin: 16px 0;
+}
+
+.list-title-text {
+	display: inline-block;
+	padding-left: 32px;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.list-title-ink-button {
+	text-align: right !important;
+	padding-right: 24px;
+}
+
+.list-covers {
+	overflow: auto;
+	width: 100%;
+}
+
+.list-covers-content {
+	width: 1048px;
+}
+
+.list-covers-cover {
+	background-color: red;
+	display: inline-block;
+	height: 100px;
+	margin: 0 4px;
+	width: 100px;
+}
+
+.list-covers-cover:first-child {
+	margin-left: 20px;
+}

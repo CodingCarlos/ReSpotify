@@ -1,0 +1,14 @@
+.toolbar-center {
+	text-align: center;
+}
+	.color-white .toolbar__center {
+		color: white;
+	}
+
+.toolbar-two_lines {
+	line-height: 21px;
+	padding-top: 8px;
+}
+.toolbar-two_lines span {
+	font-size: .8em;
+}
