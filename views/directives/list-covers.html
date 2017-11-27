@@ -1,17 +1,9 @@
 <div style="position: relative;">
 <ons-gesture-detector>
 	<div class="list-covers">
-		<div class="list-covers-content">
+		<div class="list-covers-content" style="width:{{120 * data.length}}px">
 			
-			<div class="list-covers-cover"></div>
-			<div class="list-covers-cover"></div>
-			<div class="list-covers-cover"></div>
-			<div class="list-covers-cover"></div>
-			<div class="list-covers-cover"></div>
-			<div class="list-covers-cover"></div>
-			<div class="list-covers-cover"></div>
-			<div class="list-covers-cover"></div>
-			<div class="list-covers-cover"></div>
+			<div ng-repeat="album in data" class="list-covers-cover">{{album}}</div>
 
 		</div>
 	</div>

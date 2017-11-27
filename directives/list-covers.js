@@ -4,10 +4,9 @@
 
 	function listCovers() {
 		return {
-			// scope: {
-			// 	title: '@',
-			// 	action: '='
-			// },
+			scope: {
+				data: '='
+			},
 			templateUrl: 'views/directives/list-covers.html'
 		};
 	}
