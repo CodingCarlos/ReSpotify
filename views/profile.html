@@ -1,5 +1,22 @@
-<ons-page id="Tab2">
-	<p style="text-align: center;">
-		Here you'll see how amazing is your own stuff.
-	</p>
+<ons-page id="Tab2" ng-controller="ProfileController as Profile">
+	
+	<ons-row>
+
+		<ons-col width="35%" class="profile-pic">
+			<img ng-src="{{Profile.user.images[0].url}}" />
+		</ons-col>
+
+		<ons-col>
+			<h1>{{Profile.user.display_name}}</h1>
+			<strong>{{Profile.user.followers.total}}</strong> followers<br>
+			<button>Settings</button>
+		</ons-col>
+
+	</ons-row>
+
+	<div class="horizontal-list">
+		<list-title title="Wololooooo"></list-title>
+		<list-covers></list-covers>
+	</div>
+
 </ons-page>

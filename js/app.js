@@ -1,41 +1,45 @@
 
-angular.module('app', ['onsen', 'ui.router'])
-.config(function($stateProvider, $urlRouterProvider) {
+(function() {
 
-	// By default show Tab 1 - Navigator MasterDetail example
-	$urlRouterProvider.otherwise('/home');
+	angular.module('app', ['onsen', 'ui.router', 'spotify'])
+	.config(function($stateProvider, $urlRouterProvider, SpotifyProvider) {
 
-	$stateProvider
+		// By default show Tab 1 - Navigator MasterDetail example
+		$urlRouterProvider.otherwise('/home');
 
-		// Tab 1 - MasterDetail example - Navigator init
-		.state('navigator', {
-			abstract: true,
-			// templateUrl: 'views/tabs.html',
-			// url: '/navigator', // Optional url prefix
-			resolve: {
-				loaded: function($rootScope) {
-					console.log('Loading navigator...');
-					return $rootScope.mainPage.resetToPage('views/tabs.html');
+		$stateProvider
+			.state('navigator', {
+				abstract: true,
+				resolve: {
+					loaded: function($rootScope) {
+						console.log('Loading navigator...');
+						return $rootScope.mainPage.resetToPage('views/tabs.html');
+					}
 				}
-			}
-		})
+			})
+			.state('tab', {
+				parent: 'navigator',
+				url: '/:tab'
+			})
+			.state('player', {
+				parent: 'navigator',
+				url: '/player',
+				onEnter: ['$rootScope', function($rootScope) {
+					$rootScope.mainPage.pushPage('views/player.html');
+				}],
+				onExit: function($rootScope) {
+					$rootScope.mainPage.popPage();
+				}
+			});
 
-		// Tabs
-		.state('tab', {
-			parent: 'navigator',
-			url: '/:tab'
-		})
 
-		// Player
-		.state('player', {
-			parent: 'navigator',
-			url: '/player',
-			onEnter: ['$rootScope', function($rootScope) {
-				$rootScope.mainPage.pushPage('views/player.html');
-			}],
-			onExit: function($rootScope) {
-				$rootScope.mainPage.popPage();
-			}
-		});
+		// Spotify client
+		SpotifyProvider.setClientId(config.spotify.clientId);
+		SpotifyProvider.setRedirectUri(config.spotify.callback);
+		SpotifyProvider.setScope('user-read-private playlist-read-private playlist-modify-private playlist-modify-public');
+		// If you already have an auth token
+		SpotifyProvider.setAuthToken(config.spotify.token);
 
-});
+	});
+})();
+

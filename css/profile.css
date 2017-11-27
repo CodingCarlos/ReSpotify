@@ -1,0 +1,8 @@
+.profile-pic {
+	padding: 24px 16px 24px 24px;
+}
+
+.profile-pic img {
+	border-radius: 50%;
+	max-width: 100%;
+}
