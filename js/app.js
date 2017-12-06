@@ -8,11 +8,21 @@
 		$urlRouterProvider.otherwise('/home');
 
 		$stateProvider
+			.state('login', {
+				url: '/login',
+				onEnter: ['$rootScope', function($rootScope) {
+					$rootScope.mainPage.pushPage('views/login.html');
+				}],
+				onExit: function($rootScope) {
+					$rootScope.mainPage.popPage();
+				}
+			})
 			.state('navigator', {
 				abstract: true,
 				resolve: {
 					loaded: function($rootScope) {
 						console.log('Loading navigator...');
+						// Shall check is logged in??
 						return $rootScope.mainPage.resetToPage('views/tabs.html');
 					}
 				}
