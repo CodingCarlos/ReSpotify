@@ -1,5 +1,7 @@
 
-angular.module('app').controller('PageController', function($state, $stateParams) {
+angular.module('app').controller('PageController', ['$state', PageController]);
+
+function PageController($state) {
     
 	var self = this;    
 
@@ -12,10 +14,6 @@ angular.module('app').controller('PageController', function($state, $stateParams
     	console.log(tabs.getActiveTabIndex());
     	goToTab(tabs.getActiveTabIndex());
     };
-
-    console.log($stateParams);
-    console.log($stateParams.tab);
-    // goToTab($stateParams.tab);
 
 
     var tabs = ['home', 'friends', 'explore', 'radio', 'profile'];
@@ -40,4 +38,4 @@ angular.module('app').controller('PageController', function($state, $stateParams
 
     }
 
-});
+}
