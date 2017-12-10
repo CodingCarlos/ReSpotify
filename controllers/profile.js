@@ -1,23 +1,26 @@
 (function() {
 
-	angular.module('app').controller('ProfileController', ['Spotify', ProfileController]);
+	angular.module('app').controller('ProfileController', ['Spotify', 'httpResponse', ProfileController]);
 
-	function ProfileController(Spotify) {
+	function ProfileController(Spotify, httpResponse) {
 		var self = this;
 
 		self.user = null;
 		self.albums = null;
 
-		// Spotify.login();
+		Spotify.getCurrentUser()
+			.then(function(response) {
+				self.user = response.data;
+			})
+			.catch(httpResponse.error);
 
-		Spotify.getCurrentUser().then(function (response) {
-			self.user = response.data;
-		});
-
-		Spotify.getSavedUserAlbums().then(function (response) {
-			self.albums = response.data.items;
-			console.log(self.albums);
-		});
+		Spotify.getSavedUserAlbums()
+			.then(function (response) {
+				self.albums = response.data.items;
+				console.log(' ---- self.albums ---- ');
+				console.log(self.albums);
+			})
+			.catch(httpResponse.error);
 
 
 		// self.current = player;

@@ -11,7 +11,13 @@ function LoginController(Spotify, $state, $timeout) {
 
 
 	function login() {
-		Spotify.login();
+		Spotify.login()
+			.then(function() {
+				console.log('Wololooooo...');
+			})
+			.catch(function() {
+				console.log('Error...');
+			});
 
 		// Start checking
 		self.isLogging = true;
@@ -30,7 +36,7 @@ function LoginController(Spotify, $state, $timeout) {
 			Spotify.setAuthToken(token);
 			
 			// Remove token or whatever
-			localStorage.removeItem('spotify-token');
+			// localStorage.removeItem('spotify-token');
 
 			// Go to home ^^
 			self.isLogging = false;

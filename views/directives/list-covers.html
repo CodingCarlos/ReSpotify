@@ -1,9 +1,12 @@
 <div style="position: relative;">
 <ons-gesture-detector>
 	<div class="list-covers">
-		<div class="list-covers-content" style="width:{{120 * data.length}}px">
+		<div class="list-covers-content" style="width:{{118 * data.length}}px">
 			
-			<div ng-repeat="album in data" class="list-covers-cover">{{album}}</div>
+			<div class="list-covers-item" ng-repeat="album in data">
+				<div class="list-covers-cover" style="background-image: url('{{album.album.images[0].url || album.images[0].url}}')"></div><br />
+				<div class="list-covers-title">{{album.album.name || album.name}}</div>
+			</div>
 
 		</div>
 	</div>

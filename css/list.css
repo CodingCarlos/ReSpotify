@@ -27,14 +27,26 @@
 	width: 1048px;
 }
 
+.list-covers-item {
+	display: inline-block;
+	margin: 0 8px;
+	vertical-align: top;
+}
+
 .list-covers-cover {
-	background-color: red;
+	background-color: #ccc;
+	background-size: cover;
 	display: inline-block;
 	height: 100px;
-	margin: 0 4px;
 	width: 100px;
 }
 
-.list-covers-cover:first-child {
+.list-covers-title {
+	display: inline-block;
+	text-align: center;
+	width: 100px;
+}
+
+.list-covers-item:first-child {
 	margin-left: 20px;
 }
